@@ -60,16 +60,16 @@ def generate() :
 # ============================================== Execution ==============================================
 window = create_window('Pass-word generator')
 
-#créer une boite
+# Create a box
 frame = Frame(window, bg = '#1f1f1f')
 
-# ajouter du texte
+# Add text
 label_titre = Label(frame, text = 'Pass-word generator !', font = ('Arial', 40), bg = '#1f1f1f', foreground = 'white')
 label_soustitre = Label(frame, text = 'by CUISSET Mattéo', font = ('Arial', 20), bg = '#1f1f1f', fg = 'white')
 password = 'Generated password ...'
 password_generated = Entry(frame, font = ('Arial', 20), bg = '#1f1f1f', fg = 'white')
 
-# ajout d'un bouton
+# Add a button
 yt_button = Button(frame, text = 'generate', font = ('Arial', 15), bg = 'white', fg = '#1f1f1f', command=generate)
 
 # packing
@@ -79,5 +79,5 @@ yt_button.pack(pady=25, fill=X)
 password_generated.pack()
 frame.pack(expand=True)
 
-# afficher la fenetre
+# Display the window
 window.mainloop ()
