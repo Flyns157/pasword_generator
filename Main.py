@@ -9,17 +9,17 @@ VERSION = 1.0
 
 def create_window(title :str, initialsize : tuple[int,int] = (1080,720), minsize : tuple[int,int] = (720,480), maxsize : tuple[int,int] = (3440,1440), background : str = '#1f1f1f')-> Tk :
     """
-    Crée une nouvelle fenêtre Tkinter avec des paramètres spécifiques.
+    Creates a new Tkinter window with specific parameters.
 
     Args:
-        title (str): Le titre de la fenêtre.
-        initialsize (tuple[int,int], optional): La taille initiale de la fenêtre. Par défaut à (1080,720).
-        minsize (tuple[int,int], optional): La taille minimale de la fenêtre. Par défaut à (720,480).
-        maxsize (tuple[int,int], optional): La taille maximale de la fenêtre. Par défaut à (3440,1440).
-        background (str, optional): La couleur d'arrière-plan de la fenêtre. Par défaut à '#1f1f1f'.
+        title (str): The window title.
+        initialsize (tuple[int,int], optional): The initial size of the window. Defaults to (1080,720).
+        minsize (tuple[int,int], optional): Minimum window size. Defaults to (720,480).
+        maxsize (tuple[int,int], optional): Maximum window size. Defaults to (3440,1440).
+        background (str, optional): Window background color. Defaults to '#1f1f1f'.
 
     Returns:
-        Tk: L'objet Tk représentant la fenêtre créée.
+        Tk: The Tk object representing the created window.
     """
     window = Tk()
     window.title (title)
@@ -32,17 +32,17 @@ def create_window(title :str, initialsize : tuple[int,int] = (1080,720), minsize
 
 def generate_password(size : int = 16, letters : bool = True, uppercase : bool = True, numbers : bool = True, specials : bool = True)-> str :
     """
-    Génère un mot de passe aléatoire.
+    Generates a random password.
 
     Args:
-        size (int, optional): La longueur du mot de passe. Par défaut à 16.
-        letters (bool, optional): Si vrai, inclut des lettres minuscules. Par défaut à True.
-        uppercase (bool, optional): Si vrai, inclut des lettres majuscules. Par défaut à True.
-        numbers (bool, optional): Si vrai, inclut des chiffres. Par défaut à True.
-        specials (bool, optional): Si vrai, inclut des caractères spéciaux. Par défaut à True.
+        size (int, optional): Password length. Defaults to 16.
+        letters (bool, optional): If true, includes lowercase letters. Defaults to True.
+        uppercase (bool, optional): If true, includes uppercase letters. Defaults to True.
+        numbers (bool, optional): If true, includes numbers. Defaults to True.
+        specials (bool, optional): If true, includes special characters. Defaults to True.
 
     Returns:
-        str: Le mot de passe généré.
+        str: The generated password.
     """
     global_data = ['0123456789','abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ','''"«»‹›“”„'‘’‚…!¡?¿()[]{}¨´`^ˆ~˜¸#*,.:;·•¯‾-–—_|¦‌‍†‡§¶©®™&@/\◊♠♣♥♦←↑→↓↔áÁâÂàÀåÅãÃäÄæÆçÇéÉêÊèÈëËíÍîÎìÌïÏñÑóÓôÔòÒøØõÕöÖœŒšŠßðÐþÞúÚûÛùÙüÜýÝÿŸ¤€$¢£¥ƒαΑβΒγΓδΔεΕζΖηΗθΘιΙκΚλΛμΜνΝξΞοΟπΠρΡσςΣτΤυΥφΦχΧψΨωΩ°µ<>≤≥=≈≠≡±−+×÷⁄%‰¼½¾¹²³ºªƒ′″∂∏∑√∞¬∩∫''']
     concerned_data = [global_data[n] for n,ok in [(1,letters), (2,uppercase), (0,numbers), (3,specials)] if ok]
